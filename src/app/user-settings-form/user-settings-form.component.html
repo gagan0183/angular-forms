@@ -3,11 +3,11 @@
 	<form #form="ngForm">
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input id="name" name="name" class="form-control" placeholder="Name" ngModel>
+			<input id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name">
 		</div>
 
 		<div class="form-check form-group">
-			<input class="form-check-input" type="checkbox" value="" id="specialOffer" name="specialOffer" ngModel>
+			<input class="form-check-input" type="checkbox" value="" id="specialOffer" name="specialOffer" [(ngModel)]="userSettings.specialOffer">
 			<label class="form-check-label" for="specialOffer">
 				Special offers
 			</label>
@@ -16,19 +16,20 @@
 		<h5>User Inteface Style</h5>
 		<div class="form-group">
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="intefaceStyle" id="lightinterface" value="light" checked ngModel>
+				<input class="form-check-input" type="radio" name="intefaceStyle" id="lightinterface" value="light" checked
+				 [(ngModel)]="userSettings.intefaceStyle">
 				<label class="form-check-label" for="lightinterface">
 					Light
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="intefaceStyle" id="mediuminterface" value="medium" ngModel>
+				<input class="form-check-input" type="radio" name="intefaceStyle" id="mediuminterface" value="medium" [(ngModel)]="userSettings.intefaceStyle">
 				<label class="form-check-label" for="mediuminterface">
 					Medium
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="intefaceStyle" id="darkinterface" value="dark" ngModel>
+				<input class="form-check-input" type="radio" name="intefaceStyle" id="darkinterface" value="dark" [(ngModel)]="userSettings.intefaceStyle">
 				<label class="form-check-label" for="darkinterface">
 					Dark
 				</label>
@@ -36,22 +37,17 @@
 		</div>
 
 		<div class="form-group">
-			<label for="subscriptionType" name="subscriptionType" ngModel>Subscription Type</label>
-			<select class="form-control" id="subscriptionType">
-				<option>Monthly</option>
-				<option>Annual</option>
-				<option>Lifetime</option>
+			<label for="subscriptionType">Subscription Type</label>
+			<select class="form-control" id="subscriptionType" name="subscriptionType" [(ngModel)]="userSettings.subscriptionType">
+				<option value="monthly">Monthly</option>
+				<option value="annual">Annual</option>
+				<option value="lifetime">Lifetime</option>
 			</select>
 		</div>
 
-		<div class="form-group">2
-			<label for="notes">Notes</label>
-			<textarea class="form-control" id="notes" rows="3" name="notes" ngModel></textarea>
-		</div>
-
 		<div class="form-group">
-			<label for="password">Password</label>
-			<input type="password" class="form-control" id="password" name="password" ngModel>
+			<label for="notes">Notes</label>
+			<textarea class="form-control" id="notes" rows="3" name="notes" [(ngModel)]="userSettings.notes"></textarea>
 		</div>
 
 		<button class="btn btn-primary">Send</button>
