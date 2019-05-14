@@ -3,11 +3,11 @@
 	<form #form="ngForm">
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input id="name" name="name" class="form-control" placeholder="Name">
+			<input id="name" name="name" class="form-control" placeholder="Name" ngModel>
 		</div>
 
 		<div class="form-check form-group">
-			<input class="form-check-input" type="checkbox" value="" id="specialOffer">
+			<input class="form-check-input" type="checkbox" value="" id="specialOffer" name="specialOffer" ngModel>
 			<label class="form-check-label" for="specialOffer">
 				Special offers
 			</label>
@@ -16,19 +16,19 @@
 		<h5>User Inteface Style</h5>
 		<div class="form-group">
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="intefaceStyle" id="lightinterface" value="light" checked>
+				<input class="form-check-input" type="radio" name="intefaceStyle" id="lightinterface" value="light" checked ngModel>
 				<label class="form-check-label" for="lightinterface">
 					Light
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="intefaceStyle" id="mediuminterface" value="medium">
+				<input class="form-check-input" type="radio" name="intefaceStyle" id="mediuminterface" value="medium" ngModel>
 				<label class="form-check-label" for="mediuminterface">
 					Medium
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="intefaceStyle" id="darkinterface" value="dark">
+				<input class="form-check-input" type="radio" name="intefaceStyle" id="darkinterface" value="dark" ngModel>
 				<label class="form-check-label" for="darkinterface">
 					Dark
 				</label>
@@ -36,7 +36,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="subscriptionType">Subscription Type</label>
+			<label for="subscriptionType" name="subscriptionType" ngModel>Subscription Type</label>
 			<select class="form-control" id="subscriptionType">
 				<option>Monthly</option>
 				<option>Annual</option>
@@ -46,16 +46,16 @@
 
 		<div class="form-group">2
 			<label for="notes">Notes</label>
-			<textarea class="form-control" id="notes" rows="3"></textarea>
+			<textarea class="form-control" id="notes" rows="3" name="notes" ngModel></textarea>
 		</div>
 
 		<div class="form-group">
 			<label for="password">Password</label>
-			<input type="password" class="form-control" id="password">
+			<input type="password" class="form-control" id="password" name="password" ngModel>
 		</div>
 
 		<button class="btn btn-primary">Send</button>
 	</form>
 </div>
 
-{{ form | json }}
+{{ form.value | json }}
