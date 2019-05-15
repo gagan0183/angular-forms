@@ -3,10 +3,16 @@
 	<form #form="ngForm" ngNativeValidate>
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" required #field>
+			<input id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" required #field="ngModel">
 		</div>
 
-		{{field.className}}
+		<p>touched {{field.touched}}</p>
+		<p>untouched {{field.untouched}}</p>
+		<p>dirty {{field.dirty}}</p>
+		<p>invalid {{field.invalid}}</p>
+		<p>valid {{field.valid}}</p>
+		<p>pristine {{field.pristine}}</p>
+
 
 		<div class="form-check form-group">
 			<input class="form-check-input" type="checkbox" value="" id="specialOffer" name="specialOffer" [(ngModel)]="userSettings.specialOffer">
