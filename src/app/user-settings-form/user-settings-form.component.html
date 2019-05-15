@@ -1,10 +1,12 @@
 <div class="container">
 	<h2>User Settings</h2>
-	<form #form="ngForm">
+	<form #form="ngForm" ngNativeValidate>
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name">
+			<input id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" required #field>
 		</div>
+
+		{{field.className}}
 
 		<div class="form-check form-group">
 			<input class="form-check-input" type="checkbox" value="" id="specialOffer" name="specialOffer" [(ngModel)]="userSettings.specialOffer">
