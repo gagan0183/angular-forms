@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 import { UserSettings } from "./user-settings";
 
@@ -6,5 +7,7 @@ import { UserSettings } from "./user-settings";
 export class DataService {
   constructor() {}
 
-  postUserSettingsFrom(userSettings: UserSettings) {}
+  postUserSettingsFrom(userSettings: UserSettings): Observable<UserSettings> {
+    return Observable.of(userSettings);
+  }
 }
